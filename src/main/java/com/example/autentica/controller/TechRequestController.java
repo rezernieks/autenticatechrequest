@@ -1,7 +1,7 @@
 package com.example.autentica.controller;
 
-import com.example.autentica.entity.Student;
-import com.example.autentica.service.StudentService;
+import com.example.autentica.entity.TechRequest;
+import com.example.autentica.service.TechRequestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-public class StudentController {
+public class TechRequestController {
 
     @Autowired
-    private StudentService studentService;
+    private TechRequestService techRequestService;
 
     @RequestMapping(value = "info", method = RequestMethod.GET)
     public String info(){
@@ -22,22 +22,22 @@ public class StudentController {
     }
 
     @RequestMapping(value = "createstudent", method = RequestMethod.POST)
-    public String createStudent(@RequestBody Student student){
-        return studentService.createStudent(student);
+    public String createStudent(@RequestBody TechRequest techRequest){
+        return techRequestService.createStudent(techRequest);
     }
 
     @RequestMapping(value = "readstudents", method = RequestMethod.GET)
-    public List<Student> readStudents(){
-        return studentService.readStudents();
+    public List<TechRequest> readStudents(){
+        return techRequestService.readStudents();
     }
 
     @RequestMapping(value = "updatestudent", method = RequestMethod.PUT)
-    public String updateStudet(@RequestBody Student student){
-        return studentService.updateStudent(student);
+    public String updateStudet(@RequestBody TechRequest techRequest){
+        return techRequestService.updateStudent(techRequest);
     }
 
     @RequestMapping(value = "deletestudent", method = RequestMethod.DELETE)
-    public String deleteStudent(@RequestBody Student student){
-        return studentService.deleteStudent(student);
+    public String deleteStudent(@RequestBody TechRequest techRequest){
+        return techRequestService.deleteStudent(techRequest);
     }
 }
