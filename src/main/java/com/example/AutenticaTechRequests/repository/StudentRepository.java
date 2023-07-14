@@ -1,6 +1,6 @@
-package com.pxp.SQLite.demo.repository;
+package com.example.AutenticaTechRequests.repository;
 
-import com.pxp.SQLite.demo.entity.Student;
+import com.example.AutenticaTechRequests.entity.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

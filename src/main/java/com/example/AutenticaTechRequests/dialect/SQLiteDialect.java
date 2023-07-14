@@ -1,4 +1,4 @@
-package com.pxp.SQLite.demo.dialect;
+package com.example.AutenticaTechRequests.dialect;
 
 import org.hibernate.dialect.Dialect;
 import org.hibernate.dialect.function.SQLFunctionTemplate;
