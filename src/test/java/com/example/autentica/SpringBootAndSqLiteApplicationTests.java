@@ -1,4 +1,4 @@
-package com.pxp.SQLite.demo;
+package com.example.autentica;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
