@@ -1,4 +1,4 @@
-package com.example.AutenticaTechRequests.entity;
+package com.pxp.SQLite.demo.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

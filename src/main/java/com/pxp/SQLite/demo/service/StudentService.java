@@ -1,7 +1,7 @@
-package com.example.AutenticaTechRequests.service;
+package com.pxp.SQLite.demo.service;
 
-import com.example.AutenticaTechRequests.entity.Student;
-import com.example.AutenticaTechRequests.repository.StudentRepository;
+import com.pxp.SQLite.demo.entity.Student;
+import com.pxp.SQLite.demo.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
