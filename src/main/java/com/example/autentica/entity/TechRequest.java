@@ -13,40 +13,21 @@ public class TechRequest {
     private String email;
     private String parameters;
     private String reason;
-    private String Date;
+    private String date;
+    private boolean status;
 
-    public TechRequest(int id, String name, String email, String parameters, String reason, String date) {
+
+
+    public TechRequest(int id, String name, String email, String parameters, String reason, String date, boolean status) {
         this.id = id;
         this.name = name;
-        this.email = email;
         this.parameters = parameters;
         this.reason = reason;
-        Date = date;
+        this.date = date;
+        this.status = status;
     }
 
-    public String getParameters() {
-        return parameters;
-    }
 
-    public void setParameters(String parameters) {
-        this.parameters = parameters;
-    }
-
-    public String getReason() {
-        return reason;
-    }
-
-    public void setReason(String reason) {
-        this.reason = reason;
-    }
-
-    public String getDate() {
-        return Date;
-    }
-
-    public void setDate(String date) {
-        Date = date;
-    }
 
     public TechRequest() {
     }
@@ -67,12 +48,36 @@ public class TechRequest {
         this.name = name;
     }
 
-    public String getEmail() {
-        return email;
+    public String getParameters() {
+        return parameters;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setParameters(String parameters) {
+        this.parameters = parameters;
+    }
+
+    public String getReason() {
+        return reason;
+    }
+
+    public void setReason(String reason) {
+        this.reason = reason;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 
     @Override
@@ -83,7 +88,8 @@ public class TechRequest {
                 ", email='" + email + '\'' +
                 ", parameters='" + parameters + '\'' +
                 ", reason='" + reason + '\'' +
-                ", Date='" + Date + '\'' +
+                ", date='" + date + '\'' +
+                ", status=" + status +
                 '}';
     }
 }

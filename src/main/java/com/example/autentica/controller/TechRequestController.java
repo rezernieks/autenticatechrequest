@@ -3,10 +3,7 @@ package com.example.autentica.controller;
 import com.example.autentica.entity.TechRequest;
 import com.example.autentica.service.TechRequestService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,23 +18,31 @@ public class TechRequestController {
         return "The application is up...";
     }
 
-    @RequestMapping(value = "createstudent", method = RequestMethod.POST)
-    public String createStudent(@RequestBody TechRequest techRequest){
-        return techRequestService.createStudent(techRequest);
+    @RequestMapping(value = "createtechrequest", method = RequestMethod.POST)
+    public String createtechRequest(@RequestBody TechRequest techRequest){
+        return techRequestService.createTechRequest(techRequest);
     }
 
-    @RequestMapping(value = "readstudents", method = RequestMethod.GET)
-    public List<TechRequest> readStudents(){
-        return techRequestService.readStudents();
+    @RequestMapping(value = "accepttechrequest/{id}", method = RequestMethod.PUT)
+    @ResponseBody
+    public String acceptTechRequest(@PathVariable("id") int id){
+        return techRequestService.acceptTechRequest(id);
     }
 
-    @RequestMapping(value = "updatestudent", method = RequestMethod.PUT)
-    public String updateStudet(@RequestBody TechRequest techRequest){
-        return techRequestService.updateStudent(techRequest);
+    @RequestMapping(value = "declinetechrequest/{id}", method = RequestMethod.PUT)
+    @ResponseBody
+    public String declineTechRequest(@PathVariable("id") int id){
+        return techRequestService.acceptTechRequest(id);
     }
 
-    @RequestMapping(value = "deletestudent", method = RequestMethod.DELETE)
-    public String deleteStudent(@RequestBody TechRequest techRequest){
-        return techRequestService.deleteStudent(techRequest);
+    @RequestMapping(value = "deletetechrequest/{id}", method = RequestMethod.DELETE)
+    @ResponseBody
+    public String deleteTechRequest(@PathVariable("id") int id){
+        return techRequestService.deleteTechRequest(id);
+    }
+
+    @RequestMapping(value = "readtechrequests", method = RequestMethod.GET)
+    public List<TechRequest> readTechRequests(){
+        return techRequestService.readTechRequests();
     }
 }
