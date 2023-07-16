@@ -10,24 +10,22 @@ public class TechRequest {
     private int id;
 
     private String name;
-    private String email;
     private String parameters;
     private String reason;
     private String date;
     private boolean status;
+    private boolean reviewed;
 
 
-
-    public TechRequest(int id, String name, String email, String parameters, String reason, String date, boolean status) {
+    public TechRequest(int id, String name, String parameters, String reason, String date, boolean status, boolean reviewed) {
         this.id = id;
         this.name = name;
         this.parameters = parameters;
         this.reason = reason;
         this.date = date;
         this.status = status;
+        this.reviewed = reviewed;
     }
-
-
 
     public TechRequest() {
     }
@@ -80,16 +78,24 @@ public class TechRequest {
         this.status = status;
     }
 
+    public boolean isReviewed() {
+        return reviewed;
+    }
+
+    public void setReviewed(boolean reviewed) {
+        this.reviewed = reviewed;
+    }
+
     @Override
     public String toString() {
         return "TechRequest{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
                 ", parameters='" + parameters + '\'' +
                 ", reason='" + reason + '\'' +
                 ", date='" + date + '\'' +
-                ", status=" + status +
+                ", status=" + status + '\'' +
+                ", reviewed=" + reviewed +
                 '}';
     }
 }

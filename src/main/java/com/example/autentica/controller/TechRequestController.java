@@ -19,7 +19,7 @@ public class TechRequestController {
     }
 
     @RequestMapping(value = "createtechrequest", method = RequestMethod.POST)
-    public String createtechRequest(@RequestBody TechRequest techRequest){
+    public String createTechRequest(@RequestBody TechRequest techRequest){
         return techRequestService.createTechRequest(techRequest);
     }
 
@@ -32,7 +32,7 @@ public class TechRequestController {
     @RequestMapping(value = "declinetechrequest/{id}", method = RequestMethod.PUT)
     @ResponseBody
     public String declineTechRequest(@PathVariable("id") int id){
-        return techRequestService.acceptTechRequest(id);
+        return techRequestService.declineTechRequest(id);
     }
 
     @RequestMapping(value = "deletetechrequest/{id}", method = RequestMethod.DELETE)

@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.util.List;
 
 @Service
@@ -38,9 +37,10 @@ public class TechRequestService {
         if (techRequestRepository.existsById(Id)){
             try {
                 TechRequest techRequestToBeUpdate = techRequestRepository.findById(Id).get();
+                techRequestToBeUpdate.setReviewed(true);
                 techRequestToBeUpdate.setStatus(true);
                 techRequestRepository.save(techRequestToBeUpdate);
-                return "TechRequest record " + Id + " updated.";
+                return "TechRequest record " + Id + " accepted.";
             }catch (Exception e){
                 throw e;
             }
@@ -54,9 +54,10 @@ public class TechRequestService {
         if (techRequestRepository.existsById(Id)){
             try {
                 TechRequest techRequestToBeUpdate = techRequestRepository.findById(Id).get();
+                techRequestToBeUpdate.setReviewed(true);
                 techRequestToBeUpdate.setStatus(false);
                 techRequestRepository.save(techRequestToBeUpdate);
-                return "TechRequest record " + Id + " updated.";
+                return "TechRequest record " + Id + " declined.";
             }catch (Exception e){
                 throw e;
             }
