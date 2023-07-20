@@ -13,11 +13,6 @@ public class TechRequestController {
     @Autowired
     private TechRequestService techRequestService;
 
-    @RequestMapping(value = "info", method = RequestMethod.GET)
-    public String info(){
-        return "The application is up...";
-    }
-
     @RequestMapping(value = "createtechrequest", method = RequestMethod.POST)
     public String createTechRequest(@RequestBody TechRequest techRequest){
         return techRequestService.createTechRequest(techRequest);

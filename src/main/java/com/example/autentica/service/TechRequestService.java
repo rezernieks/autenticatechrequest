@@ -22,7 +22,7 @@ public class TechRequestService {
     @Transactional
     public String createTechRequest(TechRequest techRequest){
         try {
-            techRequest.setId(null == techRequestRepository.findMaxId()? 0 : techRequestRepository.findMaxId() + 1);
+            techRequest.setId(null == techRequestRepository.findMaxId()? 1 : techRequestRepository.findMaxId() + 1);
             LocalDateTime localDateTime = LocalDateTime.now();
             techRequest.setDate(localDateTime.toString());
             techRequestRepository.save(techRequest);
